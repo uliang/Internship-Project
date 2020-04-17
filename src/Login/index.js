@@ -1,8 +1,13 @@
 import React from 'react';
 import './index.css';
-import Route from 'react-router-dom';
+import Route, { Redirect } from 'react-router-dom';
 
 class LoginPage extends React.Component {
+
+    handleSubmit = () => {
+            this.props.history.push('/Home')   
+    }
+
     render() {
         return (
             <div>
@@ -12,7 +17,7 @@ class LoginPage extends React.Component {
               </h1>
                 </div>
                 <div>
-                    <form>
+                    <form onSubmit={this.handleSubmit}>
                         <input type="text" placeholder="ID-Number" className="Input"></input>
                         <br></br>
                         <input type="text" placeholder="Password" className="Input"></input>
