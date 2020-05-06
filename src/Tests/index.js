@@ -1,10 +1,10 @@
 import React from 'react';
-import './index.css'
 import User from './Images/User.png'
+import Table from './TestsTable.jsx'
 import { DropDownButtonComponent } from '@syncfusion/ej2-react-splitbuttons';
 
+class TestsPage extends React.Component {
 
-class HomePage extends React.Component {
     handleClasses = () => {
         this.props.history.push('/Classes')
     }
@@ -18,7 +18,7 @@ class HomePage extends React.Component {
             text: 'Friend Requests'
         }, {
             text: 'Account Settings'
-            }];
+        }];
         this.items = [{
             text: 'General'
         }, {
@@ -27,13 +27,16 @@ class HomePage extends React.Component {
         return (
             <div>
                 <div className="Heading">
-                    <h1>E-Grading</h1>
+                    <h1>E-Grading RE</h1>
                     <span className="Settings">
                         <DropDownButtonComponent items={this.items} iconCss='e-icons F_Properties' > Settings </DropDownButtonComponent>
                     </span>
                     <span className="EditProfile">
                         <DropDownButtonComponent items={this.stuff} iconCss='e-icons MT_Resource' > Profile </DropDownButtonComponent>
                     </span>
+                </div>
+                <div className="Table">
+                    <Table />
                 </div>
                 <div className="SideColor">
                     <div>
@@ -43,14 +46,14 @@ class HomePage extends React.Component {
                         <p className="Name">Name: User's Name</p>
                         <div className="Links">
                             <p className="Classes" onClick={this.handleClasses}>Classes</p>
-                            <p className="Tests" onClick={this.handleTests}>Tests</p>
+                            <p className="Tests" onClick={this.handleTests} style={{ background: '#999999' }}>Tests</p>
                             <p className="Students">Students</p>
                         </div>
                     </div>
                 </div>
-            </div >
+            </div>
         )
     }
 }
 
-export default HomePage
+export default TestsPage

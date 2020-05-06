@@ -1,10 +1,10 @@
-import React from 'react';
-import './index.css'
+﻿import React from 'react';
 import User from './Images/User.png'
+import Table from './ClassesTable.jsx'
 import { DropDownButtonComponent } from '@syncfusion/ej2-react-splitbuttons';
 
+class ClassesPage extends React.Component {
 
-class HomePage extends React.Component {
     handleClasses = () => {
         this.props.history.push('/Classes')
     }
@@ -18,7 +18,7 @@ class HomePage extends React.Component {
             text: 'Friend Requests'
         }, {
             text: 'Account Settings'
-            }];
+        }];
         this.items = [{
             text: 'General'
         }, {
@@ -35,6 +35,9 @@ class HomePage extends React.Component {
                         <DropDownButtonComponent items={this.stuff} iconCss='e-icons MT_Resource' > Profile </DropDownButtonComponent>
                     </span>
                 </div>
+                <div className="Table">
+                    <Table />
+                </div>
                 <div className="SideColor">
                     <div>
                         <img className="ProfilePic" src={User} alt="Profile Pic" />
@@ -42,15 +45,15 @@ class HomePage extends React.Component {
                     <div className="Sidebar">
                         <p className="Name">Name: User's Name</p>
                         <div className="Links">
-                            <p className="Classes" onClick={this.handleClasses}>Classes</p>
-                            <p className="Tests" onClick={this.handleTests}>Tests</p>
+                            <p className="Classes" onClick={this.handleClasses} style={{ background: '#999999' }}>Classes</p>
+                            <p className="Tests" onClick={this.handleTests} >Tests</p>
                             <p className="Students">Students</p>
                         </div>
                     </div>
                 </div>
-            </div >
+            </div>
         )
     }
 }
 
-export default HomePage
+export default ClassesPage
