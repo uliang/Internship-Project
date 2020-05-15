@@ -4,24 +4,19 @@ import MaterialTable from 'material-table';
 export default function Table() {
     const [state, setState] = React.useState({
         columns: [
-            { title: 'No.', field: 'number'},
+            { title: 'No.', field: 'number' },
+            { title: 'Test Name', field: 'name' },
+            { title: 'Test Description', field: 'desc' },
             { title: 'Classes', field: 'class' },
-            { title: 'Students', field: 'students',},
-            {
-                title: 'Tests',
-                field: 'tests',
-            },
         ],
         data: [
-            { number: '1', class: 'Class 1', students: 40, tests: 'Test 1' },
-            { number: '2', class: 'Class 2', students: 50, tests: 'Test 2' },
-            { number: '3', class: 'Class 3', students: 40, tests: 'Test 1' },
+            { number: '1', name: 'Test 1', desc: 'ree', class: 'Class 1' },
         ],
     });
 
     return (
         <MaterialTable
-            title="List Of Classes"
+            title="List Of Tests"
             columns={state.columns}
             data={state.data}
             editable={{

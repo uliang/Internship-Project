@@ -8,6 +8,9 @@ class HomePage extends React.Component {
     handleClasses = () => {
         this.props.history.push('/Classes')
     }
+    handleStudents = () => {
+        this.props.history.push('/Students')
+    }
     handleTests = () => {
         this.props.history.push('/Tests')
     }
@@ -44,7 +47,7 @@ class HomePage extends React.Component {
                         <div className="Links">
                             <p className="Classes" onClick={this.handleClasses}>Classes</p>
                             <p className="Tests" onClick={this.handleTests}>Tests</p>
-                            <p className="Students">Students</p>
+                            <p className="Students" onClick={this.handleStudents}>Students</p>
                         </div>
                     </div>
                 </div>

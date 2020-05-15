@@ -1,9 +1,9 @@
 import React from 'react';
 import User from './Images/User.png'
-import TestsDisplay from './Tables/TestsDisplayTable'
+import QuestionsTable from './Tables/QuestionsTable'
 import { DropDownButtonComponent } from '@syncfusion/ej2-react-splitbuttons';
 
-class TestsDisplayPage extends React.Component {
+class QuestionsPage extends React.Component {
 
     handleClasses = () => {
         this.props.history.push('/Classes')
@@ -42,9 +42,9 @@ class TestsDisplayPage extends React.Component {
                     </span>
                 </div>
                 <div className="Table">
-                    <button style={{ background: '#999999', width: '130px' }}>Tests Display</button>
-                    <button onClick={this.Questions} style={{ width: '130px' }}>Questions</button>
-                    <TestsDisplay />
+                    <button onClick={this.handleTests} style={{ width: '130px' }}>Tests Display</button>
+                    <button onClick={this.Questions} style={{ background: '#999999', width: '130px' }}>Questions</button>
+                    <QuestionsTable />
                 </div>
                 <div className="SideColor">
                     <div>
@@ -63,4 +63,4 @@ class TestsDisplayPage extends React.Component {
         )
     }
 }
-export default TestsDisplayPage
+export default QuestionsPage

@@ -4,24 +4,29 @@ import MaterialTable from 'material-table';
 export default function Table() {
     const [state, setState] = React.useState({
         columns: [
-            { title: 'No.', field: 'number'},
-            { title: 'Classes', field: 'class' },
-            { title: 'Students', field: 'students',},
             {
-                title: 'Tests',
-                field: 'tests',
+                title: 'Question', field: 'qn', render: rowData => (
+                    <>
+                        <select>
+                            <option>Question 1</option>
+                            <option>Question 2</option>
+                        </select>
+                    </>
+                )
             },
+            { title: 'Student Name', field: 'name' },
+            { title: 'Student Answer', field: 'answer' },
+            { title: 'Final Grade', field: 'finalgrade' },
+            { title: 'Suggested Grade', field: 'suggestedgrade' },
         ],
         data: [
-            { number: '1', class: 'Class 1', students: 40, tests: 'Test 1' },
-            { number: '2', class: 'Class 2', students: 50, tests: 'Test 2' },
-            { number: '3', class: 'Class 3', students: 40, tests: 'Test 1' },
+            { name:'Student 1', answer: 'Idk', finalgrade: 'A', suggestedgrade: 'B' },
         ],
     });
 
     return (
         <MaterialTable
-            title="List Of Classes"
+            title="List Of Students"
             columns={state.columns}
             data={state.data}
             editable={{
@@ -64,7 +69,7 @@ export default function Table() {
             options={{
                 headerStyle: {
                     fontSize: '11px'
-                },
+                }
             }}
         />
     );

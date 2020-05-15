@@ -1,9 +1,9 @@
 import React from 'react';
 import User from './Images/User.png'
-import TestsDisplay from './Tables/TestsDisplayTable'
+import StudentList from './Tables/StudentListTable.jsx'
 import { DropDownButtonComponent } from '@syncfusion/ej2-react-splitbuttons';
 
-class TestsDisplayPage extends React.Component {
+class StudentListPage extends React.Component {
 
     handleClasses = () => {
         this.props.history.push('/Classes')
@@ -14,8 +14,11 @@ class TestsDisplayPage extends React.Component {
     handleTests = () => {
         this.props.history.push('/Tests')
     }
-    Questions = () => {
-        this.props.history.push('/Tests/QuestionsPage')
+    StudentAnswers = () => {
+        this.props.history.push('/Students/StudentAnswers')
+    }
+    QuestionAnswers = () => {
+        this.props.history.push('/Students/QuestionAnswers')
     }
     render() {
         this.stuff = [{
@@ -42,9 +45,10 @@ class TestsDisplayPage extends React.Component {
                     </span>
                 </div>
                 <div className="Table">
-                    <button style={{ background: '#999999', width: '130px' }}>Tests Display</button>
-                    <button onClick={this.Questions} style={{ width: '130px' }}>Questions</button>
-                    <TestsDisplay />
+                    <button onClick={this.handleStudents}  style={{ background: '#999999', width: '130px' }}>Student List</button>
+                    <button onClick={this.StudentAnswers} style={{ width: '130px' }}>Student Answers</button>
+                    <button onClick={this.QuestionAnswers} style={{ width: '130px' }}>Question Answers</button>
+                    <StudentList />
                 </div>
                 <div className="SideColor">
                     <div>
@@ -54,8 +58,8 @@ class TestsDisplayPage extends React.Component {
                         <p className="Name">Name: User's Name</p>
                         <div className="Links">
                             <p className="Classes" onClick={this.handleClasses}>Classes</p>
-                            <p className="Tests" onClick={this.handleTests} style={{ background: '#999999' }}>Tests</p>
-                            <p className="Students" onClick={this.handleStudents}>Students</p>
+                            <p className="Tests" onClick={this.handleTests}>Tests</p>
+                            <p className="Students" onClick={this.handleStudents} style={{ background: '#999999' }}>Students</p>
                         </div>
                     </div>
                 </div>
@@ -63,4 +67,5 @@ class TestsDisplayPage extends React.Component {
         )
     }
 }
-export default TestsDisplayPage
+
+export default StudentListPage

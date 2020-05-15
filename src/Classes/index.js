@@ -8,6 +8,9 @@ class ClassesPage extends React.Component {
     handleClasses = () => {
         this.props.history.push('/Classes')
     }
+    handleStudents = () => {
+        this.props.history.push('/Students')
+    }
     handleTests = () => {
         this.props.history.push('/Tests')
     }
@@ -36,6 +39,7 @@ class ClassesPage extends React.Component {
                     </span>
                 </div>
                 <div className="Table">
+                    <button style={{ background: '#999999', width: '130px' }}>Classes</button>
                     <Table />
                 </div>
                 <div className="SideColor">
@@ -46,8 +50,8 @@ class ClassesPage extends React.Component {
                         <p className="Name">Name: User's Name</p>
                         <div className="Links">
                             <p className="Classes" onClick={this.handleClasses} style={{ background: '#999999' }}>Classes</p>
-                            <p className="Tests" onClick={this.handleTests} >Tests</p>
-                            <p className="Students">Students</p>
+                            <p className="Tests" onClick={this.handleTests}>Tests</p>
+                            <p className="Students" onClick={this.handleStudents} >Students</p>
                         </div>
                     </div>
                 </div>
