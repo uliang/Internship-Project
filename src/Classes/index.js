@@ -1,10 +1,12 @@
 ﻿import React from 'react';
 import User from './Images/User.png'
 import Table from './ClassesTable.jsx'
-import { DropDownButtonComponent } from '@syncfusion/ej2-react-splitbuttons';
+import Modal from './FileTransfer.jsx'
+import { DropDownButtonComponent } from '@syncfusion/ej2-react-splitbuttons'; //npm install @syncfusion/ej2-react-splitbuttons –save
 
 class ClassesPage extends React.Component {
 
+    //Functions For Switching Pages
     handleClasses = () => {
         this.props.history.push('/Classes')
     }
@@ -14,11 +16,13 @@ class ClassesPage extends React.Component {
     handleTests = () => {
         this.props.history.push('/Tests')
     }
+    //Functions For Switching Pages
+
     render() {
+
+        //Contents of Dropdown Menus Top Right, Not Sure If Functions Necessary
         this.stuff = [{
             text: 'My Profile'
-        }, {
-            text: 'Friend Requests'
         }, {
             text: 'Account Settings'
         }];
@@ -27,6 +31,8 @@ class ClassesPage extends React.Component {
         }, {
             text: 'Advanced'
         }];
+        //Contents of Dropdown Menus Top Right
+
         return (
             <div>
                 <div className="Heading">
@@ -40,6 +46,8 @@ class ClassesPage extends React.Component {
                 </div>
                 <div className="Table">
                     <button style={{ background: '#999999', width: '130px' }}>Classes</button>
+                    <Modal />
+                    <button style={{ width: '130px', float: 'right' }}>Add File</button>
                     <Table />
                 </div>
                 <div className="SideColor">

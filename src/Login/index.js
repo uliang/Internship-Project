@@ -3,9 +3,11 @@ import './index.css';
 
 class LoginPage extends React.Component {
 
+    //Functions For Switching Pages
     handleSubmit = () => {
             this.props.history.push('/Home')   
     }
+    //Functions For Switching Pages
 
     render() {
         return (

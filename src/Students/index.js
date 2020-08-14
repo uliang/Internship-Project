@@ -1,10 +1,11 @@
 import React from 'react';
 import User from './Images/User.png'
 import StudentList from './Tables/StudentListTable.jsx'
-import { DropDownButtonComponent } from '@syncfusion/ej2-react-splitbuttons';
+import { DropDownButtonComponent } from '@syncfusion/ej2-react-splitbuttons';//npm install @syncfusion/ej2-react-splitbuttons –save
 
 class StudentListPage extends React.Component {
 
+    //Functions For Switching Pages
     handleClasses = () => {
         this.props.history.push('/Classes')
     }
@@ -20,7 +21,9 @@ class StudentListPage extends React.Component {
     QuestionAnswers = () => {
         this.props.history.push('/Students/QuestionAnswers')
     }
+    //End Of Functions For Switching Pages
     render() {
+        //Contents of Dropdown Menus Top Right, Not Sure If Functions Necessary
         this.stuff = [{
             text: 'My Profile'
         }, {
@@ -33,6 +36,7 @@ class StudentListPage extends React.Component {
         }, {
             text: 'Advanced'
         }];
+        //End Of Contents of Dropdown Menus Top Right
         return (
             <div>
                 <div className="Heading">
@@ -45,7 +49,7 @@ class StudentListPage extends React.Component {
                     </span>
                 </div>
                 <div className="Table">
-                    <button onClick={this.handleStudents}  style={{ background: '#999999', width: '130px' }}>Student List</button>
+                    <button onClick={this.handleStudents} style={{ background: '#999999', width: '130px' }}>Student List</button>
                     <button onClick={this.StudentAnswers} style={{ width: '130px' }}>Student Answers</button>
                     <button onClick={this.QuestionAnswers} style={{ width: '130px' }}>Question Answers</button>
                     <StudentList />

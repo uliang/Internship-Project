@@ -1,10 +1,10 @@
 import React from 'react';
 import User from './Images/User.png'
 import StudentAnswers from './Tables/StudentAnswerTable.jsx'
-import { DropDownButtonComponent } from '@syncfusion/ej2-react-splitbuttons';
+import { DropDownButtonComponent } from '@syncfusion/ej2-react-splitbuttons';//npm install @syncfusion/ej2-react-splitbuttons –save
 
 class StudentAnswersPage extends React.Component {
-
+    //Functions For Switching Pages
     handleClasses = () => {
         this.props.history.push('/Classes')
     }
@@ -20,7 +20,9 @@ class StudentAnswersPage extends React.Component {
     QuestionAnswers = () => {
         this.props.history.push('/Students/QuestionAnswers')
     }
+    //End Of Functions For Switching Pages
     render() {
+        //Contents of Dropdown Menus Top Right, Not Sure If Functions Necessary
         this.stuff = [{
             text: 'My Profile'
         }, {
@@ -32,7 +34,8 @@ class StudentAnswersPage extends React.Component {
             text: 'General'
         }, {
             text: 'Advanced'
-        }];
+            }];
+        //End Of Contents of Dropdown Menus Top Right
         return (
             <div>
                 <div className="Heading">
