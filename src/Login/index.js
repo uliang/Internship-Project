@@ -1,12 +1,13 @@
 import React from 'react';
 import './index.css';
-import Route, { Redirect } from 'react-router-dom';
 
 class LoginPage extends React.Component {
 
+    //Functions For Switching Pages
     handleSubmit = () => {
             this.props.history.push('/Home')   
     }
+    //Functions For Switching Pages
 
     render() {
         return (
@@ -17,15 +18,15 @@ class LoginPage extends React.Component {
               </h1>
                 </div>
                 <div>
-                    <form onSubmit={this.handleSubmit}>
+                    <form>
                         <input type="text" placeholder="ID-Number" className="Input"></input>
                         <br></br>
                         <input type="text" placeholder="Password" className="Input"></input>
                         <br></br>
-                        <input type="checkbox" className="Remember" value="1"></input>
+                        <input type="checkbox" className="Remember" style={{ marginLeft: '30em'}} value="1"></input>
                         <label htmlFor="Remember">Remember Me</label>
                         <br></br>
-                        <input type="submit" className="Submit" value="Submit"></input>
+                        <button type="button" className="Submit" value="Submit" onClick={this.handleSubmit}>Submit</button>
                         <h2 className="E-Grading">E-Grading</h2>
                     </form>
                     <hr className="line"></hr>
